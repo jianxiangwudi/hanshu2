@@ -1,0 +1,134 @@
+
+//#include <stdio.h>
+//#include "add.h"
+//
+//int main()
+//{
+//	int a = 0;
+//	int b = 10;
+//	int sum = 0;
+//	sum = add(a, b);
+//
+//	return 0;
+//}
+
+
+
+
+//函数的递归。。。套娃掉函数，外部内部都要执行!
+//#include <stdio.h>
+//void print(int x)
+//{
+//	if (x > 9)
+//	{
+//		print(x / 10);
+//	}
+//	printf("%d ", x%10);
+//}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	print(num);
+//	return 0;
+//
+//}//大事化小的思考方法
+
+//递归时返回调用函数应有条件，否则会栈溢出
+//同时，每次调用之后要越来越接近这个限制条件
+//比如
+//#include <stdio.h>
+//int main()
+//{
+//	printf("hehe\n");
+//	main();//因为调用main函数没有条件限制，所以会导致死循环，最终导致栈溢出
+//
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char arr[] = "abc";
+//	int len = strlen(arr);
+//	printf("%d\n", len);
+//	return 0;
+//}//普通的方法——求字符串长度
+
+//
+//#include <stdio.h>
+//#include <string.h>
+//int my_strlen(char* p)
+//{
+//	if (*p != '\0')
+//		return 1 + my_strlen(p + 1);
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	char arr[] = "abc";
+//	int len = my_strlen(arr);
+//	printf("%d\n", len);
+//	return 0;
+//}//经典而又简单的函数递归例子
+
+
+//#include <stdio.h>
+//int jie(int x)
+//{
+//	int i = 0;
+//	int he = 1;
+//	for(i=1;i<=x;i++)
+//	{
+//		he = he * i;
+//	}
+//	return he;
+//}以循环的方式写出n的阶乘；
+//int jie(int x)
+//{
+//	
+//	if (x > 0)
+//	{
+//		return x * jie(x - 1);
+//	}
+//	else
+//		return 1;
+//}//用递归的方法设计出n的阶乘（原创）
+//
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d", &n);
+//	ret = jie(n);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+//求第n个斐波那契数
+
+
+#include <stdio.h>
+int qiuhe(int x)
+{
+	if (x >=3)
+		return qiuhe(x - 1) + qiuhe(x - 2);
+	else
+		return 1;
+
+}
+int main()
+{
+	int fib = 0;
+	int i = 0;
+	scanf("%d", &i);
+
+	fib = qiuhe(i);
+	printf("%d\n", fib);
+	return 0;
+}
+
+
+
